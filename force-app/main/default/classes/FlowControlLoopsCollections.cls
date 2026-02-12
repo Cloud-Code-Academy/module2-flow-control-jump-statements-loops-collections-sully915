@@ -188,18 +188,21 @@ public with sharing class FlowControlLoopsCollections {
      * @return The string "Hello World!; Hello World!; Hello World!; "
      */
     public static String returnHelloWorld() {
-        
         // Initialize the result String
-        String result = '';
         // Use a for loop to append 'Hello World!;' to the result string three times
-        for (Integer i = 1; i <= 3; i++) {
-            if (i == 3) {
-                result += 'Hello World!';
-            } else {
-                result += 'Hello World!; ';
+        /* 
+         for (){
+            
+         }
+        */
+        String result = '';
+            for (Integer i = 1; i <= 3; i++) {
+                if (i == 3) {
+                    result += 'Hello World!';
+                } else {
+                    result += 'Hello World!; ';
+                }
             }
-        }
-
         return result; // Return the final result string
     }
 
