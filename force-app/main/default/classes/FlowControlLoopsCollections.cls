@@ -35,7 +35,7 @@ public with sharing class FlowControlLoopsCollections {
         if (x > y) {
             return 'Hello World!';
         }
-        return null; // Replace null with the variable you used to store the result
+        return null;
     }
 
     /**
@@ -51,7 +51,7 @@ public with sharing class FlowControlLoopsCollections {
         if (age >= 18) {
             return true;
         }
-        return false;
+        return false;       
     }
 
     /**
@@ -293,12 +293,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A Set of unique strings.
      */
     public static Set<String> createStringSet(List<String> inputList) {
+        
         // Create a new Set of strings
         Set<String> stringSet = new Set<String>();
 
         //add strings to the set
+        for (String s : inputList) {
+            stringSet.add(s);
+        }
 
-        return null; // Replace null with the variable you used to store the result
+        return stringSet; // Return the set of unique strings
     }
 
     /**
@@ -309,12 +313,17 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
-
+        Integer sum = 0;
         // Loop through the list of integers
+        for (Integer n : numbers) {
             // if the number is negative skip this iteration
-        
+            if (n < 0) {
+                continue;
+            }
+            sum += n;
+        }
 
-        return null; // Replace null with the variable you used to store the result
+        return sum; // Return the sum of positive integers
     }
 
     /**
@@ -326,12 +335,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return The position of the word in the list as a string or -1 if the word was not found.
      */
     public static Integer findWordInList(String wordToFind, List<String> words) {
+
         // The variable to store the index of the word
+        Integer index = -1;
 
         // Loop through the list of words
-            // If the current word is the word to find, exit the loop
+        for (Integer i = 0; i < words.size(); i++) {
+            if (words[i] == wordToFind) {
+                index = i;
+                break;
+            }
+        }
 
-        return null; // Replace null with the variable you used to store the result
+        return index; // Return the index of the word, or -1 if not found
     }
 
     /**
@@ -342,10 +358,20 @@ public with sharing class FlowControlLoopsCollections {
      * @return The total value in dollars, stopped at the point when it exceeds 40 dollars.
      */
     public static Decimal countMoney() {
+        
+        // The variable to store the total amount of money
+        Decimal total = 0; 
         // The list of money in the wallet, represented in dollars and cents
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
 
-        return null; // Replace null with the variable you used to store the result
+        for (Decimal money : moneyInWallet) {
+            if (total + money > 40) {
+                break;
+            }
+            total += money;
+        }
+
+        return total; // Return the total value in dollars, stopped at the point when it exceeds 40 dollars
     }
 
     /**
@@ -355,7 +381,9 @@ public with sharing class FlowControlLoopsCollections {
      * @return The Map of fruits and their quantities.
      */
     public static Map<String, Integer> addItemsToMap() {
+        
         // Initialize an empty Map
+        Map<String, Integer> fruitQuantities = new Map<String, Integer>();
 
         // Add key-value pairs to the Map
         // add Apples => 5
@@ -363,8 +391,13 @@ public with sharing class FlowControlLoopsCollections {
         // add Bananas => 15
         // add Pears => 20
         // add Grapes => 25
+        fruitQuantities.put('Apples', 5);
+        fruitQuantities.put('Oranges', 10);
+        fruitQuantities.put('Bananas', 15);
+        fruitQuantities.put('Pears', 20);
+        fruitQuantities.put('Grapes', 25);
 
-        return null; // Replace null with the variable you used to store the result
+        return fruitQuantities; // Return the Map of fruits and their quantities
     }
 
     /**
